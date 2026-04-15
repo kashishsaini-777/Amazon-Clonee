@@ -19,7 +19,7 @@ export const listProducts = () => async (dispatch) =>{
         const count = data.length;
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
-            payload: data
+            payload: data.products
         })
     }
     catch(error){

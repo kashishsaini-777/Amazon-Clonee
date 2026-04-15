@@ -32,25 +32,25 @@ const UserProfile = () => {
             dispatch({
                 type: USER_UPDATE_PROFILE_RESET
             })
-           dispatch(detailsUser(userInfo._id)); 
+           dispatch(detailsUser(userInfo.id)); 
         }
         else{
             setName(user.name);
             setEmail(user.email);
         }
         
-    }, [dispatch, userInfo._id,user]);
+    }, [dispatch, userInfo.id,user]);
 
 
     const updateDetails = (e) =>{
         e.preventDefault();
 
-        if(password != confirmpassword){
+        if(password !== confirmpassword){
             alert('Password does not match.')
         }
         else{
             dispatch(updateUserProfile({
-                userId: user._id,
+                userId: user.id,
                 name,
                 email,
                 password

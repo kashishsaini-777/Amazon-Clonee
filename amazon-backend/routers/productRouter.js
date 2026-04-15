@@ -12,7 +12,7 @@ productRouter.get(
   "/",
   expressAsyncHandler(async (req, res) => {
     const products = await Product.findAll();
-    res.send(products);
+    res.send({products});
   })
 );
 
@@ -22,7 +22,7 @@ productRouter.get(
   "/seed",
   expressAsyncHandler(async (req, res) => {
     // Optional: clear table first
-    await Product.destroy({ where: {}, truncate: true });
+    //await Product.destroy({ where: {}, truncate: true });
 
     const createdProducts = await Product.bulkCreate(products);
 

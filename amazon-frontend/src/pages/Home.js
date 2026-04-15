@@ -6,19 +6,24 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "../styles/Home.css"
 import Product from '../components/Product'
-import { listProducts } from '../actions/ProdcutActions'
+import { listProducts } from '../actions/ProductActions'
 
 const Home = () => {
 
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(listProducts());
     }, [dispatch])
 
     const productList = useSelector( state => state.productList);
-    const {loading,error,products} = productList;
 
-    
+    // 🔥 SAFE DEFAULT (IMPORTANT)
+    const {loading, error, products = []} = productList;
+
+    // 🔥 DEBUG (you can remove later)
+    console.log("Products:", products);
+
     const settings = {
         dots: true,
         infinite: true,
@@ -64,7 +69,6 @@ const Home = () => {
                     slidesToScroll: 1,
                 }  
             },
-            
         ]
     }
 
@@ -91,23 +95,19 @@ const Home = () => {
             
             <ProductList/>
 
-
             <div className="home-product-slider">
 
                 <h2 className="sec-title">More Products</h2>
 
                 <Slider {...settings2}>
 
-                    {products && products.map((product)=>{
-                            return(
-                                <Product key={product._id} product={product} /> 
-                            )
-                        })
-                    }
+                    {/* 🔥 SAFE CHECK */}
+                    {Array.isArray(products) && products.map((product)=>(
+                        <Product key={product.id} product={product} /> 
+                    ))}
 
                 </Slider>
             </div>
-
 
         </div>
     )

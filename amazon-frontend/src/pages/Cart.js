@@ -60,7 +60,7 @@ const Cart = (props) => {
                                             </div>
 
                                             <div className="min-30">
-                                                <Link to={`/products/product/${item.product}`}>{item.name}</Link>
+                                                <Link to={`/product/${item.product}`}>{item.name}</Link>
                                             </div>
                                             <div className="qty-select">
                                                 <select value={item.qty} 

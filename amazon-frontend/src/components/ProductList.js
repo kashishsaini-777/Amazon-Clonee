@@ -4,7 +4,7 @@ import '../styles/ProductList.css'
 import Product from './Product'
 import LoadingBox from "./LoadingBox"
 import MessageBox from "./MessageBox"
-import { listProducts } from '../actions/ProdcutActions'
+import { listProducts } from '../actions/ProductActions'
 
 const ProductList = () => {
 
@@ -32,7 +32,7 @@ const ProductList = () => {
                 <div className="product-container">
                     {products.map((product)=>{
                         return(
-                            <Product key={product._id} product={product}/> 
+                            <Product key={product.id} product={product}/> 
                         )
                         })
                     }

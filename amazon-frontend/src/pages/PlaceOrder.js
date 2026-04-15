@@ -41,7 +41,7 @@ const PlaceOrder = (props) => {
 
     useEffect(() => {
         if(success){
-            props.history.push(`/order/${order._id}`);
+            props.history.push(`/order/${order.id}`);
             dispatch({
                 type: ORDER_CREATE_RESET
             });
@@ -94,7 +94,7 @@ const PlaceOrder = (props) => {
                                                 </div>
                                     
                                                 <div className="min-30">
-                                                    <Link to={`/products/product/${item.product}`}>{item.name}</Link>
+                                                    <Link to={`/product/${item.product}`}>{item.name}</Link>
                                                 </div>
                                                 
                                                 <p>{item.qty} x ${item.price} = ${item.price*item.qty}</p>

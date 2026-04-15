@@ -6,7 +6,7 @@ export const generateToken = (user) => {
     // Here jwt is taking 3 parameters to create token
 
     return jwt.sign({
-        _id: user._id,
+        _id: user.id,
         name: user.name,
         email: user.email,
         isAdmin: user.isAdmin,

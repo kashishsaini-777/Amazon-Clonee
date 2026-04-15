@@ -4,7 +4,7 @@ import { useSelector , useDispatch} from 'react-redux'
 import Product from '../components/Product'
 import LoadingBox from "../components/LoadingBox"
 import MessageBox from "../components/MessageBox"
-import { listProducts } from '../actions/ProdcutActions'
+import { listProducts } from '../actions/ProductActions'
 import PriceCheckBox from '../components/PriceCheckBox'
 import {prices} from "../data/priceRanges";
 
@@ -75,7 +75,7 @@ const CategoryBasedPage = (props) => {
                                 && product.price <= range[1]
                                 && product.price >= range[0]
                             ).map(filteredProduct => (
-                                <Product key={filteredProduct._id} product={filteredProduct} />
+                                <Product key={filteredProduct.id} product={filteredProduct} />
                             ))
                         }
                     </div>

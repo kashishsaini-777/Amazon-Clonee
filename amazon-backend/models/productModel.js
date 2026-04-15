@@ -1,5 +1,6 @@
-import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
+import { DataTypes } from "sequelize";
+
 
 const Product = sequelize.define(
   "Product",
@@ -13,22 +14,20 @@ const Product = sequelize.define(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
 
     image: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    brand: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT, // better for long URLs
       allowNull: false,
     },
 
     category: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+
+    brand: {
+      type: DataTypes.STRING,
     },
 
     description: {
@@ -41,24 +40,23 @@ const Product = sequelize.define(
       allowNull: false,
     },
 
-    stock: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-
     rating: {
       type: DataTypes.FLOAT,
       defaultValue: 0,
     },
 
-    numRev: {
+    numReviews: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+
+    stock: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
     },
   },
   {
-    timestamps: true,
+    timestamps: false,
   }
 );
-
 export default Product;

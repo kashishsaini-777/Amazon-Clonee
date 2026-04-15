@@ -39,8 +39,8 @@ const OrderHistory = (props) => {
                     <tbody>
                         {console.log(orders)}
                         {orders.map((order)=>(
-                            <tr key={order._id}>
-                                <td>{order._id}</td>
+                            <tr key={order.id}>
+                                <td>{order.id}</td>
                                 <td>{order.createdAt.substring(0,10)}</td>
                                 <td>$ {order.totalPrice}</td>
                                 <td>{order.isPaid?
@@ -53,7 +53,7 @@ const OrderHistory = (props) => {
                                 </td>
                                 <td>
                                     <button type="button" className="order-details-btn"
-                                    onClick={() => props.history.push(`/order/${order._id}`)}>
+                                    onClick={() => props.history.push(`/order/${order.id}`)}>
                                         <InfoIcon/>
                                     </button>
                                 </td>

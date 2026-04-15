@@ -5,7 +5,7 @@ import Rating from '../components/Rating';
 import "../styles/ProductPage.css"
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import { detailsProduct } from '../actions/ProdcutActions';
+import { detailsProduct } from '../actions/ProductActions';
 
 const ProductPage = (props) => {
 

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { useSelector, useDispatch} from 'react-redux';
-import { listProducts } from '../../actions/ProdcutActions';
+import { listProducts } from '../../actions/ProductActions';
 import ProductList from '../../components/ProductList'
 import "../../styles/AllProducts.css"
 
