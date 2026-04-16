@@ -1,7 +1,7 @@
-import axios from 'axios'
+import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "https://amazon-clonee-18xq.onrender.com/api/products"
-})
+  baseURL: "https://amazon-clonee-18xq.onrender.com"
+});
 
-export default instance
+export default instance;
