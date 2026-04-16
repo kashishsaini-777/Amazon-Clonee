@@ -49,6 +49,6 @@
     "eslint": "^7.16.0"
   },
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   }
 }
