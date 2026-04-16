@@ -1,11 +1,12 @@
 import { Sequelize } from "sequelize";
 
 const sequelize = new Sequelize(
-  "amazon_clone",   // DB_NAME
-  "root",           // DB_USER
-  "12345",          // DB_PASSWORD
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
   {
-    host: "localhost",
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT, // 🔥 VERY IMPORTANT
     dialect: "mysql",
     logging: false,
   }
