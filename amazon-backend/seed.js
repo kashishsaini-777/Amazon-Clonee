@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import sequelize from "./config/db.js";
 import Product from "./models/productModel.js";
 import { products } from "./products.js";
